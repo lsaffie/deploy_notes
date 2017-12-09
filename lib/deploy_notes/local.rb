@@ -1,9 +1,17 @@
-class DeployNotes::Local
-  def branch_name
-    `git rev-parse --abbrev-ref HEAD`
-  end
+module DeployNotes
+  class Local
+    def get
+      branch_name + ":" + commit_info
+    end
 
-  def commit_info
-    `git log -n1 --pretty=format::%ae:%s:%cr`
+    private
+
+    def branch_name
+      `git rev-parse --abbrev-ref HEAD`
+    end
+
+    def commit_info
+      `git log -n1 --pretty=format::%ae:%s:%cr`
+    end
   end
 end

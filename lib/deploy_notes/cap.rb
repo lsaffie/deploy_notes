@@ -1,24 +1,30 @@
-class DeployNotes::Cap
-  def branch_name
-    `tail -1 #{current}/../../revisions.log`
-  end
+module DeployNotes
+  class Cap
+    def get
+      branch_name + ":" + commit_info
+    end
 
-  def commit_info
-    `git --git-dir=#{repo} --work-tree #{current}
+    def branch_name
+      `tail -1 #{current}/../../revisions.log`
+    end
+
+    def commit_info
+      `git --git-dir=#{repo} --work-tree #{current}
      log #{revision} -n1 --pretty=format::%ae:%s:%cr`
-  end
+    end
 
-  private
+    private
 
-  def current
-    Rails.root.to_s
-  end
+    def current
+      Rails.root.to_s
+    end
 
-  def repo
-    "#{current}/../../repo"
-  end
+    def repo
+      "#{current}/../../repo"
+    end
 
-  def revision
-    `cat #{current}/REVISION | tr -d '\n'`
+    def revision
+      `cat #{current}/REVISION | tr -d '\n'`
+    end
   end
 end
