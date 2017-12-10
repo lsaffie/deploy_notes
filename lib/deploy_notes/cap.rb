@@ -1,7 +1,7 @@
 module DeployNotes
   class Cap
     def get
-      branch_name + ":" + commit_info
+      branch_name + deploy_time + commit_info
     end
 
     def branch_name
@@ -10,8 +10,9 @@ module DeployNotes
 
     def commit_info
       `git --git-dir=#{repo} --work-tree #{current}
-     log #{revision} -n1 --pretty=format::%ae:%s:%cr`
+     log #{revision} -n1 --pretty=format::%ae:%s`
     end
+
 
     private
 
@@ -25,6 +26,11 @@ module DeployNotes
 
     def revision
       `cat #{current}/REVISION | tr -d '\n'`
+    end
+
+    def deploy_time
+      deploy_time = `stat -c '%y' #{current}/REVISION`
+      deploy_time.to_time.to_s(:db)
     end
   end
 end
