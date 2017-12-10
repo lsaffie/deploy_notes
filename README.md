@@ -26,9 +26,11 @@ Or install it yourself as:
 ## Usage
 
 mount this gem as an engine to your `config/routes.rb`
+
 `mount DeployNotes::Engine, at: 'deploy_notes'`
 
 Use it in your views
+
 `= render "deploy_notes/show" unless Rails.env.production?`
 
 ## Development
