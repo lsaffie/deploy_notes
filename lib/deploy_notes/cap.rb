@@ -14,7 +14,7 @@ module DeployNotes
     end
 
     def commit_info
-      `git --git-dir=#{repo} --work-tree #{current} log #{revision} -n1 --pretty=format::%ae:%s`
+      `git --git-dir=#{repo} --work-tree #{current} log #{revision} -n1 --pretty=format:%ae:%s`
     end
 
     private
