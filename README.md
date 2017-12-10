@@ -25,7 +25,10 @@ Or install it yourself as:
 
 ## Usage
 
-`DeployNotes.get`
+Include `DeployNotes.get` where you want to display the deployment information.
+
+For example in a view:
+`=DeployNotes.get`
 
 ## Development
 
