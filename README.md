@@ -25,10 +25,11 @@ Or install it yourself as:
 
 ## Usage
 
-Include `DeployNotes.get` where you want to display the deployment information.
+mount this gem as an engine to your `config/routes.rb`
+`mount DeployNotes::Engine, at: 'deploy_notes'`
 
-For example in a view:
-`=DeployNotes.get`
+Use it in your views
+`= render "deploy_notes/show" unless Rails.env.production?`
 
 ## Development
 
