@@ -1,8 +1,11 @@
 # DeployNotes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/deploy_notes`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem provides an interface that allows you to get deploy information for use in your application.
 
-TODO: Delete this and the text above, and describe your gem
+The interface provides you with the following string
+`deployed branch name`:`commiter_email`:`commit_subject`:`commit_time`
+
+`notify-branch-environments ::luis@homestars.com:deploy_notes gem notify-branch-environments:33 seconds ago`
 
 ## Installation
 
@@ -22,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`DeployNotes.get`
 
 ## Development
 
@@ -32,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/deploy_notes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lsaffie/deploy_notes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +43,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the DeployNotes project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/deploy_notes/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the DeployNotes project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lsaffie/deploy_notes/blob/master/CODE_OF_CONDUCT.md).
