@@ -1,11 +1,11 @@
 module DeployNotes
   class Cap
     def get
-      branch_name + deploy_time + commit_info
+       "[#{branch_name}] - [#{deploy_time}] - [#{commit_info}]"
     end
 
     def branch_name
-      `tail -1 #{current}/../../revisions.log`
+      `tail -1 #{current}/../../revisions.log | cut -d' ' -f2`
     end
 
     def deploy_time
