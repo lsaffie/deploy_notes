@@ -2,7 +2,7 @@ module DeployNotes
   # Class for local deployments
   class Local
     def get
-      branch_name + ':' + commit_info
+      "[#{branch_name}] - [#{commit_info}]"
     end
 
     private
@@ -12,7 +12,7 @@ module DeployNotes
     end
 
     def commit_info
-      `git log -n1 --pretty=format::%ae:%s:%cr`
+      `git log -n1 --pretty=format:%ae:%s:%cr`
     end
   end
 end
