@@ -1,7 +1,8 @@
 module DeployNotes
+  # Class for local deployments
   class Local
     def get
-      branch_name + ":" + commit_info
+      branch_name + ':' + commit_info
     end
 
     private

@@ -1,7 +1,8 @@
 module DeployNotes
+  # Class for capistrano deployments
   class Cap
     def get
-       "[#{branch_name}] - [#{deploy_time}] - [#{commit_info}]"
+      "[#{branch_name}] - [#{deploy_time}] - [#{commit_info}]"
     end
 
     def branch_name
