@@ -12,7 +12,7 @@ module DeployNotes
     end
 
     def commit_info
-      `git log -n1 --pretty=format:%ae--%s--%cr--%h`
+      `git log -n1 --pretty=format:[%ae:\ %s][%cr][%h]`
     end
   end
 end
